@@ -1,0 +1,12 @@
+<h3 class="mb-3 text-success">Ingresos</h3>
+<div class="" *ngFor="let ingreso of ingresos">
+    <div class="row p-2 mx-1 item">
+      <div class="col-md-7 ">
+        <p class="my-auto">{{ingreso.getDescripcion()}}</p>
+      </div>
+      <div class="col-md-5 d-flex">
+        <p class="my-auto text-success mr-3">{{ingreso.getMonto() | currency:"COL":"$":"1.0-2"}}</p>
+        <button class="btn btn-danger py-0 px-2" (click)="eliminarRegistro(ingreso)">X</button>
+      </div>
+    </div>
+</div>

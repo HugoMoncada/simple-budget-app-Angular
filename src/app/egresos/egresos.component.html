@@ -1,0 +1,13 @@
+<h3 class="mb-3 text-danger">Egresos</h3>
+<div class="" *ngFor="let egreso of egresos">
+    <div class="row p-2 mx-1 item">
+      <div class="col-md-7">
+        <p class="my-auto">{{egreso.getDescripcion()}}</p>
+      </div>
+      <div class="col-md-5 d-flex">
+        <p class="my-auto text-danger mr-2" >-{{egreso.getMonto() | currency:"COL":"$":"1.0-2"}}</p>
+        <p class="badge rounded-pill bg-danger p-2 my-auto mr-2 text-white">{{calcularPorcentaje(egreso) | percent}}</p>
+        <button class="btn btn-danger py-0 px-2" (click)="eliminarRegistro(egreso)">X</button>
+      </div>
+    </div>
+</div>

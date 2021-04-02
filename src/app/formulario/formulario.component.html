@@ -1,0 +1,21 @@
+<!-- Form Component -->
+<form (ngSubmit)="f.form.valid && enviaritem()"  #f="ngForm" class="py-3 px-2 mb-4">
+    <div class="row g-2">
+      <div class="col-sm">
+        <select name="opcion" id="opcion" class="form-control" (change)="getTipo($event)">
+          <option value="ingreso" selected>+</option>
+          <option value="egreso">-</option>
+        </select>
+      </div>
+      <div class="col-sm-6">
+        <input name="descripcion" type="text" class="form-control" placeholder="ej: 'Salario'"  required aria-label="descripcion" [(ngModel)]="descripcion">
+      </div>
+      <div class="col-sm">
+        <input name="monto" type="number" class="form-control" placeholder="ej: $5000000" aria-label="price" required min="1" [(ngModel)]="monto">
+      </div>
+      <div class="col-sm">
+        <button  class="btn btn-success w-100">Agregar</button>
+      </div>
+    </div>
+  </form>
+<!-- End Form Component -->
